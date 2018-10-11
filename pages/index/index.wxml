@@ -1,0 +1,255 @@
+<!-- <view class='shadow1' hidden='{{noshow}}'></view> -->
+<view class='shadow1 ' hidden='{{noshow}}'></view>
+
+<view class='shadow1 shadow_' hidden='{{!noShadow}}'></view>  
+
+
+<!-- 模块选择  -->
+<view class='list'>
+  <view class='title clearfix'>
+    <view class='fl'>模块选择</view>
+    <view class='fr' bindtap='caseImg'>填写模板</view>
+  </view>
+
+  <checkbox-group>
+      <label class="checkbox" wx:for-items="{{items}}" bindtap="checkboxChange"  data-value='{{item.name}}'  data-index='{{item.name}}'>
+          <text hidden="{{item.checked == true}}"></text>
+          <image src='../../images/check.png' hidden="{{item.checked == false}}"></image>
+          <checkbox value="{{item.name}}" checked="{{item.checked == true}}" color='{{color}}' hidden='true'/>
+          {{item.value}}
+          <view class='fr' catchtap='dowmUp_' data-value='{{item.name}}'>
+            <image src='../../images/down.png' hidden='{{item.isClick}}'></image>
+            <image class='up' src='../../images/down.png' hidden='{{!item.isClick}}'></image>
+          </view>
+
+          <!-- 二级  -->
+          <checkbox-group  hidden='{{!item.isClick}}' >
+            <label class="checkbox" wx:for-items="{{item.list}}" wx:for-item='list'  data-id='{{list.id}}'  data-value='{{list.name}}' catchtap='childChange' data-index='{{item.name}}'>
+                  <navigator>
+                    <text hidden="{{list.check == true}}"></text>
+                      <image src='../../images/check.png' hidden="{{list.check == false}}"></image>
+                      <checkbox value="{{list.name}}" checked="{{list.check == true}}" color='{{color}}' hidden='true'/>{{list.value}}
+                      <view class='fr' catchtap='dowmUp'>
+                        ￥ <text>{{list.price}}</text>
+                    </view>
+                  </navigator>
+              </label>
+          </checkbox-group>
+
+          <view class='total_ clearfix' hidden='{{item.num == 0}}' catchtap='defaultTap'>
+            <view class='fl'>
+              已勾选{{item.num}}件产品
+            </view>
+            <view class='fr'>
+              共计
+              <text>￥</text>
+              <text>{{item.total}}</text>
+            </view>
+          </view>
+      </label>
+  </checkbox-group>
+
+  <!-- 党群加油站  -->
+  <checkbox-group class='changeColor'>
+      <label class="checkbox" wx:for-items="{{items3}}"  wx:for-item="item3" >
+          <navigator  bindtap="checkboxChange3" data-value='{{item3.name}}'>
+            <text hidden="{{item3.checked == true}}"></text>
+            <image src='../../images/check.png' hidden="{{item3.checked == false}}"></image>
+            <checkbox value="{{item3.name}}" checked="{{item3.checked == true}}" color='{{color}}' hidden='true'/>
+            {{item3.value}}
+            <view class='right' data-value='{{item3.name}}'>
+                第一件0元购买
+            </view>
+          </navigator>
+
+          <view class='fire clearfix' hidden='{{item3.checked == false}}'>
+              <view class='fl'>
+                一体机
+              </view>
+              <view class='fr clearfix'>
+                <text class='add fr' bindtap='add' data-val='{{item3.num}}'>+</text>
+                <text class='fr'>{{item3.num}}</text>
+                <text class='minus fr {{item3.num == 1? "noMinus" : ""}}' bindtap='minus' data-val='{{item3.num}}'>-</text>
+              </view>
+            </view>
+
+            <view class='total_ clearfix' hidden='{{item3.checked == false}}'>
+              <view class='fl'>
+                已勾选{{item3.num}}件产品
+              </view>
+              <view class='fr'>
+                已优惠15000元共计
+                <text>￥</text>
+                <text>{{item3.price}}</text>
+              </view>
+            </view>
+      </label>
+  </checkbox-group>
+
+  <!-- 两个个固定模板  -->
+  <checkbox-group class='changeColor'>
+      <label class="checkbox" wx:for-items="{{items1}}"  wx:for-item="item1" >
+          <navigator bindtap="checkboxChange1" data-value='{{item1.name}}'>
+            <text hidden="{{item1.checked == true}}"></text>
+            <image src='../../images/check.png' hidden="{{item1.checked == false}}" ></image>
+            <checkbox value="{{item1.name}}" checked="{{item1.checked == true}}" color='{{color}}' hidden='true' />
+            {{item1.value}}
+            <view class='right' data-value='{{item1.name}}'>
+                <text class='oldPrice'>￥ <text>{{item1.discount}}</text></text>
+                <text class='newPrice'>￥ <text>{{item1.price}}</text></text>
+            </view>
+          </navigator>
+      </label>
+  </checkbox-group>
+
+  <checkbox-group class='changeColor'>
+      <label class="checkbox" wx:for-items="{{items2}}"  wx:for-item="item2" data-value='{{item2.name}}'>
+          <navigator bindtap="checkboxChange2" data-value='{{item2.name}}'>
+            <text hidden="{{item2.checked == true}}"></text>
+            <image src='../../images/check.png' hidden="{{item2.checked == false}}" ></image>
+            <checkbox value="{{item2.name}}" checked="{{item2.checked == true}}" color='{{color}}' hidden='true'/>
+            {{item2.value}}
+            <view class='right' data-value='{{item2.name}}'>
+                <text class='oldPrice'>￥ <text>{{item2.discount}}</text></text>
+                <text class='newPrice'>￥ <text>{{item2.price}}</text></text>
+            </view>
+
+            
+          </navigator>
+          <view class='remarkTotal clearfix'>
+              <view class='fl'>
+                {{item2.remark}}
+              </view>
+            </view>
+      </label>
+  </checkbox-group>
+</view>
+
+<!-- 产品形态  -->
+<view class='list'>
+  <view class='title clearfix'>
+    <view class='fl'>产品形态</view>
+  </view>
+
+  <radio-group class='changeColor'>
+      <label class="checkbox checkbox4" wx:for-items="{{items4}}"  wx:for-item="item4" data-value='{{item4.name}}' bindtap='checkboxChange_'>
+          <navigator>
+            <text hidden="{{item4.checked == true}}"></text>
+            <image src='../../images/check.png' hidden="{{item4.checked == false}}"></image>
+            <radio  value="{{item4.name}}" checked="{{item4.checked == true}}" color='{{color}}' hidden='true'/>
+            {{item4.value}}
+            <view class='line'></view>
+          </navigator>
+      </label>
+  </radio-group>
+</view>
+
+<!-- 客户信息  -->
+<view class='list'>
+  <view class='title clearfix'>
+    <view class='fl'>客户信息</view>
+  </view>
+  <view class='lists'>
+    <!-- 客户信息填写  -->
+    <view class='li clearfix'>
+      <view class='fl'>
+        姓名
+      </view>
+      <input placeholder='{{placeholder}}' value='{{items5.name}}' bindblur='inputName' placeholder-class='placeholder' class='fr' bindfocus='inputfouce'></input>
+    </view>
+    <view class='li clearfix'>
+      <view class='fl'>
+        单位
+      </view>
+      <input placeholder='{{placeholder1}}' value='{{items5.company}}' bindblur='inputUnit' placeholder-class='placeholder' class='fr' bindfocus='companyfouce'></input>
+    </view>
+    <view class='li clearfix'>
+      <view class='fl'>
+        电话
+      </view>
+      <input placeholder='{{placeholder2}}' value='{{items5.phone}}' bindblur='inputPhone' bindinput='phone' bindfocus='phonefouce' placeholder-class='placeholder' class='fr' type='number'></input>
+    </view>
+  </view>
+</view>
+
+<!-- 备注  -->
+<view class='list'>
+  <view class='title clearfix'>
+    <view class='fl'>备注</view>
+  </view>
+  <view class='lists remark'>
+    <!-- 客户信息填写  -->
+      <view bindtap='isfouce'><navigator>{{items5.remark.length != 0?items5.remark:'请输入备注文本'}}</navigator></view>  
+  </view>
+</view>
+
+
+<!-- 生成报价表  -->
+<view class='btn'>
+  <navigator class='bulid' bindtap='build' wx:if='{{isWrite}}'>生成报价表</navigator>
+  <view wx:else>生成报价表</view>
+</view>
+
+<!-- 输入textarea  -->
+<view wx:if="{{!hiddenmodalput}}" title="" class='textareaModal'>
+    <view class='shadow' bindtap="cancel"></view>
+    <view>
+      <view>
+         <textarea placeholder='{{placeholder3}}' placeholder-class='placeholder' bindinput='remark' value='{{items5.remark}}' fixed='true'></textarea> 
+        <view class='modalBtn clearfix'>
+          <navigator class='fl' bindtap='cancel'>取消</navigator>
+          <navigator class='fr' bindtap="confirm">确定</navigator>
+        </view>
+      </view>
+    </view>
+</view>
+
+<!-- total  -->
+<view class='total clearfix'>
+  <view class='fl'>
+  已选择模块{{totalNum}}个，一体机{{items3[0].checked == true? items3[0].num : 0}}台，共计
+  </view>
+  <view class='fr'>
+    ￥ <text>{{total}}</text>
+  </view>
+</view>
+
+
+
+
+
+<!-- 完善个人信息弹窗  -->
+<view class='info' hidden='{{isGoInfo}}'>
+  <view class='shadow'></view>
+  <view class='infoBox'>
+      <text>请完善你的个人信息，以便客户联系~</text>
+      <button bindtap='goInfo'>去填写</button>
+    </view>
+</view>
+
+
+<!-- 模板  -->
+<view class='caseImg' hidden='{{caseImg}}'>
+
+  <view class='shadow'  bindtap='closeImg'></view>
+
+  <swiper indicator-dots="{{indicator}}" autoplay="true" interval="3000" duration="1000" indicator-active-color="#C71B1B" current='{{current}}'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.src}}" class="slide-image"/>
+        <view>{{item.text}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='close' bindtap='closeImg'>
+    <image src='../../images/close.png'></image>
+  </view>
+
+</view>
+
+<!-- tabbar  -->
+<import src ="../tabbar/index.wxml"/>
+<template is="tabbar" data="{{_tabIndex}}" />
+
+

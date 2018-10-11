@@ -1,0 +1,128 @@
+/* pages/offerList/index.wxss */
+@import "/utils/common.wxss";
+page {
+  background-color: #fff;
+  width: 100vw;
+}
+
+.offer-item {
+  height: 150rpx;
+  width: 100vw;
+  overflow-x: hidden;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.offer-item>view {
+  position: absolute;
+  /* width: calc(100% + 200rpx);  */
+  height: 150rpx; 
+}
+
+.offer-item .offer-item-top {
+  height: 100%;
+}
+
+.offer-item .offer-item-top navigator {
+  display: inline-block;
+  width: 100vw; 
+  height: 100%;
+}
+
+.offer-item .content {
+  padding: 35rpx 30rpx;
+  position: relative;
+  height: calc(100% - 70rpx);
+}
+
+.offer-item .title .fl {
+  display: inline-block;
+  width: 78%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.offer-item .title .fr {
+  display: inline-block;
+  width: 20rpx;
+  height: 26rpx;
+  margin-top: 5rpx;
+}
+
+.offer-item .note {
+  position: absolute;
+  left: 30rpx;
+  bottom: 35rpx;
+  width: calc(100vw - 60rpx);
+  font-size: 24rpx;
+  color: #999;
+}
+
+.offer-item .posit {
+  width: 200rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+  display: none
+}
+
+.posit.isMove {
+  display: inline-block;
+  position: absolute;
+}
+
+.posit.isMove[hidden] {
+  display: none
+}
+
+.offer-item .posit>view {
+  display: inline-block;
+  width: 100rpx;
+}
+
+.offer-item .posit>view:first-of-type {
+  background-color: #FED847;
+}
+
+.offer-item .posit>view:last-of-type {
+  background-color: #C71B1B;
+}
+
+.offer-item .posit image {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+/* noMsg  */
+.noMsg {
+  position: relative;
+  width: 100vw;
+  height: 100vh
+}
+
+.noMsg>view {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -80%);
+  width: 45%
+}
+
+.noMsg>view image {
+  display: block;
+  width: 100%;
+  height: 224rpx;
+}
+
+.noMsg view view {
+  border: 4rpx dashed #ededed;
+  padding: 16rpx 50rpx;
+  color: #666;
+  font-size: 28rpx;
+  margin-top: 76rpx;
+  border-radius: 10rpx;
+  display: inline-block
+}

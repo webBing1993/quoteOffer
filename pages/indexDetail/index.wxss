@@ -1,0 +1,67 @@
+/* pages/indexDetail/index.wxss */
+@import "/utils/common.wxss";
+page {
+  padding-bottom: 106rpx;
+}
+.list {
+  padding: 0 30rpx;
+}
+
+.list .title {
+  line-height: 120rpx;
+  height: 120rpx;
+  font-size: 36rpx;
+  color: #C71B1B;
+  font-weight: bold;
+}
+
+.list .lists {
+  border-radius: 10rpx;
+  padding: 0 29rpx;
+  background-color: #fff
+}
+
+.list .lists .li {
+  border-bottom: 1px solid #f0f0f0;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: table;
+  width: 100%;
+}
+
+.list .lists .li:last-of-type {
+  border-bottom: 0
+}
+
+.list .lists .li view {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: right;
+}
+
+.list .lists .li .fl {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.list .lists .li .fr {
+  font-size: 28rpx;
+  color: #333;
+  width: 60%
+}
+
+.list .content {
+  border-radius: 10rpx;
+  padding: 20rpx 29rpx 34rpx;
+  background-color: #fff;
+  color: #666;
+  font-size: 28rpx;
+  line-height:48rpx;
+}
+
+.list .caseContent image {
+  width: calc(100vw - 120rpx);
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 0 50rpx #777777
+}

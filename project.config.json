@@ -1,0 +1,44 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.0",
+	"appid": "wxa83a7e91ff7620cd",
+	"projectname": "%E6%8A%A5%E4%BB%B7%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "群聊",
+					"pathName": "pages/login/index",
+					"query": "",
+					"scene": "1044",
+					"shareInfo": {
+						"groupName": "测试模拟群1",
+						"shareName": "kjl8TVixqf4v5guO7rGwlXuzk1wfWxpfubpTNGETe7I@cr4dev",
+						"shareKey": "UoSw1G3156VhZ3fYvz4I7dlgQwkgZcvJccqbAejO_OXD5ScBOPO2My5HQz9nw1vkm3BUfcDFvPvkgeKVc0pZNQ~~"
+					}
+				}
+			]
+		}
+	}
+}

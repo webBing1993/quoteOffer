@@ -1,0 +1,46 @@
+<!--pages/offerList/index.wxml-->
+<view class="offer-item" wx:for-items='{{offerList}}'>
+    <!--这里绑定了刚才说的3个函数分别为 touchS，touchM touchE-->
+    <!--这里注意这个  style="{{item.txtStyle}}" ，这是我们一会再js中 将要设置的样式 -->
+    <view  style="{{item.txtStyle}}">
+      <view class="offer-item-top fl clearfix" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"  data-index="{{index}}">
+        <navigator bindtap='navigatorTo' data-index="{{item.id}}">
+          <view class='content'>
+            <view class='title clearfix'>
+              <view class='fl'>
+                {{item.title}}党建项目报价表
+              </view>
+              <image src='../../images/right.png' class='fr'></image>
+            </view>
+            <view class='note clearfix'>
+              <view class='price fl'>
+                {{item.create_time}}
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+
+      <!--这里是左滑按钮部分----start-->
+      <view bindtap="delItem" class='posit fr isMove' hidden='{{!item.isMove}}'>
+          <view class="ref" data-offerid="{{item.id}}" data-index="{{item.id}}" catchtap="ref">
+            <image src='../../images/ref.png'></image>
+          </view>
+          <view class="del" data-offerid="{{item.id}}" data-index="{{item.id}}" catchtap="del">
+            <image src='../../images/default.png'></image>
+          </view>
+      </view>
+      <!--这里是左滑按钮部分----end-->
+    </view>
+</view>
+
+
+<!-- 缺省页  -->
+<view class='noMsg' hidden='{{offerList.length != 0}}'>
+
+  <view>
+    <image src='../../images/noMsg.png'></image>
+    <view>你当前还没有报表</view>
+  </view>
+
+</view>

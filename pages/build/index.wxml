@@ -1,0 +1,200 @@
+<!--pages/build/index.wxml-->
+<view class='content'>
+  <view class='title'>
+    <text>产品模块报价单</text>
+    <text>省时又省力</text>
+    <image src='../../images/build2.png'></image>
+    <image src='../../images/build1.png'></image>
+  </view>
+
+  <view class='lists'>
+    <view class='list'>
+      <view class='listTitle'>
+        报价详情
+        <image src='../../images/build3.png'></image>
+      </view>
+
+      <view class='produce clearfix' wx:for-items='{{items}}'>
+        <view class='fl'>
+          <text class='clicle'></text>
+          <text class='heightLine' style='height : {{item.heigth}}'></text>
+          <view class='total_'>{{item.total}}元</view>
+        </view>
+        <view class='fr'>
+          <view class='produceTitle clearfix'>
+            <text class='fl'>{{item.value}}</text>
+            <text class='num fr'>数量{{item.num}}</text>
+          </view>
+          <view class='productList' wx:for='{{item.list}}' wx:for-item='list'>
+            <view class='produceListTitle clearfix'  bindtap='toDetail' data-id='{{list.id}}'>
+              <text class='fl'>{{list.value}}</text>
+              <text class='fr price'>{{list.price}}元</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='produce clearfix' wx:for-items='{{items3}}'>
+        <view class='fl'>
+          <text class='clicle'></text>
+          <text class='heightLine' style='height : {{item.heigth}}'></text>
+          <view class='total_'>{{item.price}}元</view>
+        </view>
+        <view class='fr'>
+          <view class='produceTitle clearfix'>
+            <text class='fl'>{{item.value}}</text>
+            <text class='num fr'>{{item.num.length != 0? item.num:0}}台</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='produce clearfix' wx:for-items='{{items1}}'>
+        <view class='fl'>
+          <text class='clicle'></text>
+          <text class='heightLine' style='height : {{item.heigth}}'></text>
+          <view class='total_'>{{item.price}}元</view>
+        </view>
+        <view class='fr'>
+          <view class='produceTitle clearfix'>
+            <text class='fl'>{{item.value}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='produce clearfix' wx:for-items='{{items2}}'>
+        <view class='fl'>
+          <text class='clicle'></text>
+          <text class='heightLine'></text>
+          <view class='total_'>{{item.price}}元</view>
+        </view>
+        <view class='fr'>
+          <view class='produceTitle clearfix'>
+            <text class='fl'>{{item.value}}</text>
+          </view>
+        </view>
+      </view>
+ 
+      <view class='total clearfix'>
+        <text class='fl'>共计{{totalNum}}个模块，<text hidden='{{!items3[0].num}}'>一体机{{items3[0].num}}台，</text>总计</text>
+        <text class='totalPrice fr'>{{total}}元</text>
+      </view>
+    </view>
+
+    <view class='list'>
+      <view class='listTitle'>
+        产品形态
+        <image src='../../images/build3.png'></image>
+      </view>
+      <view class='shape clearfix'>
+        <text class='fl'  wx:for='{{items4}}'>{{item.value}}</text>
+      </view>
+    </view>
+
+    <view class='list'  hidden='{{!isSelf}}'>
+      <view class='listTitle'>
+        客户信息
+        <image src='../../images/build3.png'></image>
+      </view>
+
+      <view class='info'>
+        <view class='infoList clearfix'>
+          <image class='fl' src='../../images/name.png'></image>
+          <view class='fl'>姓名</view>
+          <view class='fr'>{{items5.name}}</view>
+        </view>
+        <view class='infoList clearfix'>
+          <image class='fl' src='../../images/company.png'></image>
+          <view class='fl'>单位</view>
+          <view class='fr'>{{items5.company}}</view>
+        </view>
+        <view class='infoList clearfix'>
+          <image class='fl' src='../../images/phone.png'></image>
+          <view class='fl'>电话</view>
+          <view class='fr' bindtap='callPhone' data-phone='{{items5.phone}}'>{{items5.phone}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='list' hidden='{{isSelf}}'>
+      <view class='listTitle'>
+        联系方式
+        <image src='../../images/build3.png'></image>
+      </view>
+
+      <view class='info'>
+        <view class='infoList clearfix'>
+          <image class='fl' src='../../images/name.png'></image>
+          <view class='fl'>姓名</view>
+          <view class='fr'>{{items7.name}}</view>
+        </view>
+        <view class='infoList clearfix'>
+          <image class='fl' src='../../images/company.png'></image>
+          <view class='fl'>单位</view>
+          <view class='fr'>{{items7.company}}</view>
+        </view>
+        <view class='infoList clearfix'>
+          <image class='fl' src='../../images/place.png'></image>
+          <view class='fl'>职位</view>
+          <view class='fr'>{{items7.positionAll[items7.position]}}</view>
+        </view>
+        <view class='infoList clearfix'>
+          <image class='fl' src='../../images/phone.png'></image>
+          <view class='fl'>电话</view>
+          <view class='fr' bindtap='callPhone' data-phone='{{items7.mobile}}'>{{items7.mobile}}</view>
+        </view>
+      </view>
+    </view>
+ 
+    <view class='list' hidden='{{!isSelf}}'>
+      <view class='remark clearfix'>
+        <view class='fl'>
+          <view class='remarkTitle'>备注</view>
+          <view> {{items5.remark.length == 0? '无备注':items5.remark}}</view>
+        </view>
+        <view class='fr'>
+          <image src='../../images/build4.png'></image>
+        </view> 
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class='btn clearfix' hidden='{{isSure == true || hasID == true || isSelf == false}}'>
+  <view class='fl' bindtap='cance'>
+    <image src='../../images/cance.png'></image>
+    <text>取消</text>
+  </view>
+  <view class='fr' bindtap='sure'>
+    <image src='../../images/sure.png'></image>
+    <text>确定</text>
+  </view>
+</view>
+
+<view class='btn clearfix' hidden='{{hasID == false || isSelf == false}}'>
+  <view class='fl' bindtap='ref'>
+    <image src='../../images/ref_1.png'></image>
+    <text class='ref'>编辑</text>
+  </view>
+  <view class='fr' bindtap='del'>
+    <image src='../../images/default_1.png'></image>
+    <text class='del'>删除</text>
+  </view>
+</view>
+
+<view class='success' hidden='{{sureIs == false}}'>
+  <view class='shadow'></view>
+  <view>
+    <image src='../../images/success.png'></image>
+    <view>生成报价单成功</view>
+  </view>
+</view>
+
+<view class='tig' hidden='{{tigClick}}'>
+  <view class='shadow'></view>
+  <view>
+    <image src='../../images/tig1.png'></image>
+    <text>点击模块可查看对应模块详情页</text>
+    <view class='tigBtn' bindtap='tigClick'><navigator>我知道了</navigator></view>
+  </view>
+</view>  

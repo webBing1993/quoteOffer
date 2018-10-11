@@ -1,0 +1,10 @@
+<!--pages/login/index.wxml-->
+
+<view class='content'>
+
+  <image src='../../images/logo_.png'  mode="widthFix"></image>
+
+  <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler">进入之图报价小程序</button>
+
+</view>
+

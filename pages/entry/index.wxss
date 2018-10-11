@@ -1,0 +1,77 @@
+/* pages/entry/index.wxss */
+@import "/utils/common.wxss";
+.bg {
+  position: relative;
+}
+
+.bg .entryBg {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* logo  */
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  transform: translate(-50%,0);
+}
+
+.logo .logoImg {
+  display: block;
+  width: 214rpx;
+  height: 214rpx;
+  margin: 0 auto;
+}
+
+.logo .title {
+  margin-top: 54rpx;
+  color: #FEFEFE;
+  font-size: 30rpx;
+  letter-spacing: 8px
+}
+
+/* btns  */
+.btns {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+}
+
+.btns input {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  text-align: center;
+  color: #666;
+  font-size: 30rpx;
+  margin-bottom: 69rpx;
+  display: block;
+  width: calc(100vw - 150rpx);
+}
+
+.btns input.placeholder {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.btns button {
+  background-color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 5rpx;
+  text-align: center;
+  color: #C71B1B;
+  font-size: 36rpx;
+  font-weight: Medium;
+  letter-spacing: 8px;
+  display: block;
+  width: calc(100vw - 150rpx);
+}
+
+.btns button.button-hover {
+  box-shadow: 0 2rpx 8rpx #7D7D7D inset;
+}

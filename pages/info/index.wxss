@@ -1,0 +1,59 @@
+/* pages/info/index.wxss */
+@import "/utils/common.wxss";
+page {
+  background-color: #fff;
+}
+
+.list {
+  padding: 0 30rpx;
+  border-bottom: 1px solid #f0f0f0;
+  height: 99rpx;
+  line-height: 99rpx;
+}
+
+.list .fl {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.list input {
+  color: #666;
+  font-size: 28rpx;
+  height: 99rpx;
+  line-height: 99rpx;
+  text-align: right;
+  width: 400rpx;
+}
+
+.list input.placeholder {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.list image {
+  display: inline-block;
+  width: 20rpx;
+  height: 26rpx;
+  margin-top: 36.5rpx;
+  margin-left: 25rpx;
+}
+
+/* save  */
+.save {
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  padding: 0 30rpx 44rpx;
+  bottom: 0
+}
+
+.save button {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #C71B1B;
+  border-radius: 5rpx;
+  font-size: 30rpx;
+  color: #fff;
+  font-weight: bold;
+  width: calc(100vw - 60rpx);
+}

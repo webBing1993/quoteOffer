@@ -1,0 +1,30 @@
+<!--pages/info/index.wxml-->
+<view class='lists'>
+  <view class='list clearfix'>
+    <view class='fl'>姓名</view>
+    <image class='fr' src='../../images/right.png'></image>
+    <input class='fr' placeholder='{{placeholder}}' value='{{name}}' placeholder-class='placeholder' bindblur='name' bindfocus='namefouce'></input>
+  </view>
+
+  <view class='list clearfix'>
+    <view class='fl'>公司</view>
+    <image class='fr' src='../../images/right.png'></image>
+    <input class='fr' placeholder='{{placeholder1}}' value='{{company}}' placeholder-class='placeholder' bindblur='company' bindfocus='companyfouce'></input>
+  </view>
+
+  <view class='list clearfix'>
+    <view class='fl'>职位</view>
+    <image class='fr' src='../../images/right.png'></image>
+    <input class='fr' placeholder='请选择职位' value='{{positionAll[position]}}' placeholder-class='placeholder' bindtap='position' disabled='disabled'></input>
+  </view>
+
+  <view class='list clearfix'>
+    <view class='fl'>电话</view>
+    <image class='fr' src='../../images/right.png'></image>
+    <input class='fr' placeholder='{{placeholder2}}' value='{{mobile}}' placeholder-class='placeholder' bindblur='phone' bindinput='phoneVal' bindfocus='phonefouce' type='number'></input>
+  </view>
+</view>
+
+<view class='save' hidden='{{isClick == false}}'>
+  <button bindtap='save'>保存个人信息</button>
+</view>

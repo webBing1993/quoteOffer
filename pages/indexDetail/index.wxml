@@ -1,0 +1,46 @@
+<!--pages/indexDetail/index.wxml-->
+<view class='list'>
+  <view class='title'>
+    模块简介
+  </view>
+  <view class='lists'>
+    <view class='li clearfix'>
+      <view class='fl'>模块名称</view>
+      <view class='fr'>{{name}}</view>
+    </view>
+    <view class='li clearfix'>
+      <view class='fl'>功能平台</view>
+      <view class='fr'>{{terrace}}</view>
+    </view>
+    <view class='li clearfix'>
+      <view class='fl'>产品形式</view>
+      <view class='fr'>{{shape}}</view>
+    </view>
+    <view class='li clearfix'>
+      <view class='fl'>适用人群</view>
+      <view class='fr'>{{crowd}}</view>
+    </view>
+    <view class='li clearfix'>
+      <view class='fl'>经典案例</view>
+      <view class='fr'>{{case}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='list'>
+  <view class='title'>
+    功能简介
+  </view>
+  <view class='content'>
+    {{content}}
+  </view>
+</view>
+
+<view class='list'>
+  <view class='title'>
+    经典案例
+  </view>
+  <view class='caseContent'>
+    <image src='{{src}}'  mode="widthFix"  data-list="{{srcList}}" data-src="{{src}}" bindtap='bigImg'></image>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/entry/index",
+    "pages/index/index",
+    "pages/user/index",
+    "pages/offerList/index",
+    "pages/indexDetail/index",
+    "pages/build/index",
+    "pages/info/index",
+    "pages/revise/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "功能报价"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

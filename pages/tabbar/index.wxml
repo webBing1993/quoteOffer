@@ -1,0 +1,15 @@
+<!-- tabbar  -->
+<template name='tabbar'>
+  <view  class='tabbar'>
+    <navigator data-tab='0' bindtap='tabIndex' data-href = '/pages/index/index'>
+      <image src='../../images/1.png' hidden='{{_tabIndex == 0}}'></image>
+      <image src='../../images/1_1.png' hidden='{{_tabIndex != 0}}'></image>
+      <text class="{{_tabIndex==0? 'active':''}}">产品</text>
+    </navigator>
+    <navigator data-tab='1' bindtap='tabIndex' data-href = '/pages/user/index' >
+      <image src='../../images/4.png' hidden='{{_tabIndex == 1}}'></image>
+      <image src='../../images/4_1.png' hidden='{{_tabIndex != 1}}'></image>
+      <text class="{{_tabIndex==3? 'active':''}}">我的</text>
+    </navigator>
+  </view>
+</template>

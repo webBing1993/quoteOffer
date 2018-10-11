@@ -1,0 +1,32 @@
+/* pages/login/index.wxss */
+@import "/utils/common.wxss";
+
+.content {
+  position: relative;
+  width: 100vw;
+}
+
+.content button {
+  display: block;
+  width: calc(100vw - 300rpx);
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-radius: 10rpx;
+  /* border: 1rpx solid #C2C2C2; */
+  color: #C71B1B;
+  font-size: 30rpx;
+  margin-top: 95rpx;
+  padding: 0;
+}
+
+.content button.button-hover {
+  box-shadow: 0 2rpx 8rpx #7D7D7D inset;
+}
+
+.content image {
+  display: block;
+  width: calc(100vw - 360rpx);
+  margin: 60rpx auto 160rpx
+}

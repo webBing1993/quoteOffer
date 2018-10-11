@@ -1,0 +1,23 @@
+<!--pages/user/index.wxml-->
+<view class='banner'>
+  <image src='../../images/user.png'></image>
+  <view class='name'>{{nickName}}</view>
+  <image src='{{avatarUrl}}'></image>
+</view>
+
+<view class='lists'>
+  <navigator class='list clearfix' data-href='../info/index' bindtap='jump'>
+    <image class='fl' src='../../images/userInfo.png'></image>
+    <view class='fl'>个人信息</view>
+    <image class='fr' src='../../images/right.png'></image>
+  </navigator>
+  <navigator class='list clearfix' data-href='../offerList/index' bindtap='jump'>
+    <image class='fl' src='../../images/userCase.png'></image>
+    <view class='fl'>我的报价表</view>
+    <image class='fr' src='../../images/right.png'></image>
+  </navigator>
+</view>
+
+<!-- tabbar  -->
+<import src ="../tabbar/index.wxml"/>
+<template is="tabbar" data="{{_tabIndex}}" />

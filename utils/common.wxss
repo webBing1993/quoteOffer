@@ -1,0 +1,19 @@
+page {
+  background-color: #f1f1f1;
+}
+
+.fl {
+  float: left
+}
+.fr {
+  float: right
+}
+.clearfix::before {
+  display: table;
+  content: '';
+}
+.clearfix::after {
+  display: table;
+  content: '';
+  clear: both;
+}
